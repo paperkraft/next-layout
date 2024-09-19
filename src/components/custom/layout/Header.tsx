@@ -8,24 +8,9 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import NavbarNavigation from './Navbar';
 import React from 'react';
-import { getLightValues } from '@/utils/themeUtils';
 
 const Header:React.FC = React.memo(()=>{
     const [config] = useConfig();
-    const val = getLightValues(config.theme);
-    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-
-    if (themeColorMeta) {
-        // If the meta tag exists, update its content
-        themeColorMeta.setAttribute('content', `hsl(${val})`);
-    } else {
-        // If it doesn't exist, create it
-        const newMeta = document.createElement('meta');
-        newMeta.setAttribute('name', 'theme-color');
-        newMeta.setAttribute('content', `hsl(${val})`);
-        document.head.appendChild(newMeta);
-    }
-
     return (
         <header className={cn("h-16 fixed top-0 z-50 flex sm:justify-start sm:flex-nowrap w-full bg-primary dark:bg-background dark:text-white text-sm py-4 border-b items-center", 
             `theme-${config.theme}`

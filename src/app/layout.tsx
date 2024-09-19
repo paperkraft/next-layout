@@ -12,10 +12,6 @@ export const metadata: Metadata = {
   description: "Educational ERP",
 };
 
-// export const viewport: Viewport = {
-//   themeColor: "currentColor"
-// }
-
 export default function RootLayout({
   children,
 }: Readonly<{

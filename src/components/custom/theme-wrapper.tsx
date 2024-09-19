@@ -2,20 +2,26 @@
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { inconsolata, inter, montserrat, noto_sans, poppins, roboto, trio } from "@/lib/fonts";
-import { Viewport } from "next";
-
+import { getLightValues } from "@/utils/themeUtils";
 interface ThemeWrapperProps extends React.ComponentProps<"section"> {
   defaultTheme?: string
 }
 
-export const viewport: Viewport = {
-  themeColor: "currentColor"
-}
-
 export default function ThemeWrapper({ defaultTheme, children, className }: ThemeWrapperProps) {
-  
   const [config] = useConfig();
+  const val = getLightValues(config.theme);
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
+  if (themeColorMeta) {
+      // If the meta tag exists, update its content
+      themeColorMeta.setAttribute('content', `hsl(${val})`);
+  } else {
+      // If it doesn't exist, create it
+      const newMeta = document.createElement('meta');
+      newMeta.setAttribute('name', 'theme-color');
+      newMeta.setAttribute('content', `hsl(${val})`);
+      document.head.appendChild(newMeta);
+  }
 
   return (
     <>

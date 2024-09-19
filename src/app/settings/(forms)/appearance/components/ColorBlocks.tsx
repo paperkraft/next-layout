@@ -8,7 +8,7 @@ const RenderColors = () => {
     const [config, setConfig] = useConfig();
     return(
       <div className="space-y-1.5">
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
           {
             themes.map((theme) => {
               const isActive = config.theme === theme.name
