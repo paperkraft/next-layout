@@ -1,0 +1,9 @@
+form#editForm.p-2(role='form')
+  .space-y-4.w-full.relative
+    .space-y-2.w-full.relative
+      label.text-sm.font-medium.leading-none(for='name' class='peer-disabled:cursor-not-allowed peer-disabled:opacity-70') Name
+      input#name.flex.h-10.w-full.rounded-md.border.border-input.bg-background.px-3.py-2.text-sm.ring-offset-background(type='text' name='name' value=name required='' class='file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50')
+    .space-y-2.w-full.relative
+      label.text-sm.font-medium.leading-none(for='email' class='peer-disabled:cursor-not-allowed peer-disabled:opacity-70') Email
+      input#email.flex.h-10.w-full.rounded-md.border.border-input.bg-background.px-3.py-2.text-sm.ring-offset-background(type='email' name='email' value=email  required='' class='file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50')
+    button.inline-flex.items-center.justify-center.whitespace-nowrap.rounded-md.text-sm.font-medium.ring-offset-background.transition-colors.bg-primary.text-primary-foreground.h-10.px-4.py-2(type='submit' class='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90') Submit
