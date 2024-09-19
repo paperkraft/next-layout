@@ -54,7 +54,7 @@ export function DisplayForm() {
   function onSubmit(data: DisplayFormValues) {
     toast("You submitted the following values:", {
       description: (
-        <pre className="mt-2 w-[324px] rounded-md bg-slate-950 p-4">
+        <pre className="mt-2 w-[295px] md:w-[324px] rounded-md bg-slate-950 p-4">
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
