@@ -2,9 +2,14 @@
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { inconsolata, inter, montserrat, noto_sans, poppins, roboto, trio } from "@/lib/fonts";
+import { Viewport } from "next";
 
 interface ThemeWrapperProps extends React.ComponentProps<"section"> {
   defaultTheme?: string
+}
+
+export const viewport: Viewport = {
+  themeColor: "currentColor"
 }
 
 export default function ThemeWrapper({ defaultTheme, children, className }: ThemeWrapperProps) {

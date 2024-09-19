@@ -1,18 +1,14 @@
 import AppLayout from "@/components/custom/layout/AppLayout";
 import TitlePage from "@/components/custom/page-heading";
-import Script from "next/script";
-import parse from 'html-react-parser';
-import { serverResponse } from "./actions/action";
+import Dummy from "@/components/custom/dummy-content";
 
 export default async function Page() {
-  const htmlString =  await serverResponse();
   return(
     <>
       <AppLayout>
         <TitlePage title="Dashboard" description="description" />
-        { parse(htmlString) }
+        <Dummy/>
       </AppLayout>
-      <Script id="test" strategy="afterInteractive" src="/js/main.js" />
     </>
   )
 } 
