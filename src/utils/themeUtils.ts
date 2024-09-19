@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { themes } from "@/registry/theme";
 
 interface Theme {
@@ -94,3 +95,8 @@ export const setStyles = (config:any) => {
   body.style.setProperty('--radius', `${config.radius}rem`);
   body.style.setProperty('font-family', `var(--${config.font})`);
 };
+
+export function getLightValues(themeName:string) {
+  const theme = themes.find(t => t.name === themeName);
+  return theme ? theme.activeColor.light : null;
+}
