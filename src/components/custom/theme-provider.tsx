@@ -1,5 +1,5 @@
 'use client'
-import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import { useMounted } from "@/hooks/use-mounted";

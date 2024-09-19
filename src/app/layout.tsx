@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Toaster } from "@/components/ui/sonner";
 import ThemeProvider from "@/components/custom/theme-provider";
 import ThemeWrapper from "@/components/custom/theme-wrapper";
@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description: "Educational ERP",
 };
 
+export const viewport: Viewport = {
+  themeColor: "black"
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      
       <body className="antialiased">
         <ThemeProvider>
           <ThemeWrapper>

@@ -6,7 +6,6 @@ import { serverResponse } from "./actions/action";
 
 export default async function Page() {
   const htmlString =  await serverResponse();
-
   return(
     <>
       <AppLayout>
